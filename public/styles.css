@@ -1,0 +1,17 @@
+#bg
+{
+    background-color: rgb(9, 33, 59);
+}
+
+#item
+{
+    width:79%;
+    height: 40px;
+}
+
+#add
+{
+    width:20%;
+    float: right;
+    height: 40px;
+}
