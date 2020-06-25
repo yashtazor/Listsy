@@ -15,3 +15,10 @@
     float: right;
     height: 40px;
 }
+
+li:hover
+{
+    cursor: pointer;
+    text-decoration: line-through;
+    background-color: rgb(255, 197, 224);
+}

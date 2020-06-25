@@ -1,10 +1,9 @@
-alert("Reached in request.js");
+console.log("Reached in request.js");
 
 $(document).ready(function(){    
 
     $('form').on('submit', function()
     {
-        console.log("Reached in form");
         var item = $('form input');
         var todo = {item: item.val()};
 
@@ -14,7 +13,22 @@ $(document).ready(function(){
             data: todo, 
             success: function(data)
             {
-                alert("Reloading after this");
+                location.reload();
+            }
+        });
+
+        return false;
+    });
+
+    $('li').on('click', function()
+    {
+        var item = $(this).text().replace(/ /g, "-");
+
+        $.ajax({
+            type: 'DELETE',
+            url: '/listsy/'+item,
+            success: function(data)
+            {
                 location.reload();
             }
         });
