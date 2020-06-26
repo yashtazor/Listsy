@@ -6,13 +6,13 @@ var mongoose = require('mongoose');
 // -------------------------------------------------------------------------------------------------------------------------
 // Connection to MongoDB.
 
-mongoose.connect('mongodb+srv://yashtazor:UsPhj7chHL9p2WA@todotest-p1k10.mongodb.net/TODOTest?retryWrites=true&w=majority');
+mongoose.connect('<Your MongoDB URL here>');
 
 var Schema = new mongoose.Schema({
     item: String
 });
 
-var Model = mongoose.model('Todo', Schema);
+var Model = mongoose.model('<Your Model Name>', Schema);
 
 
 // -------------------------------------------------------------------------------------------------------------------------
