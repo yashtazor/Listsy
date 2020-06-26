@@ -1,12 +1,21 @@
 #bg
 {
-    background-color: rgb(9, 33, 59);
+    background-color: rgb(39, 39, 39);
+}
+
+#logo
+{
+    display: block;
+    margin: auto;
+    height: 5%;
+    width: 5%;
 }
 
 #item
 {
     width:79%;
     height: 40px;
+    outline-color: #d9534f;
 }
 
 #add
@@ -20,5 +29,6 @@ li:hover
 {
     cursor: pointer;
     text-decoration: line-through;
-    background-color: rgb(255, 197, 224);
+    background-color: rgb(207, 207, 207);
+    color: #d9534f;
 }
