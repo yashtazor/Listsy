@@ -1,28 +1,57 @@
 var BodyParser = require('body-parser');
 var urlEncodedParser = BodyParser.urlencoded({extended: false});
+var mongoose = require('mongoose');
 
-var data = [{item:'First'}, {item:'Second'}];
+
+// -------------------------------------------------------------------------------------------------------------------------
+// Connection to MongoDB.
+
+mongoose.connect('mongodb+srv://yashtazor:UsPhj7chHL9p2WA@todotest-p1k10.mongodb.net/TODOTest?retryWrites=true&w=majority');
+
+var Schema = new mongoose.Schema({
+    item: String
+});
+
+var Model = mongoose.model('Todo', Schema);
+
+
+// -------------------------------------------------------------------------------------------------------------------------
+// Request Control Function.
 
 module.exports = function(app)
 {
-
+    
+    // GET Request.
     app.get('/listsy', function(req, res)
     {
-        res.render('Main', {todos: data});
+        // Fetch from MongoDB and render it to the view.
+
+        Model.find({}, function(err, data){ 
+            if(err) throw err;
+            res.render('Main', {todos: data});
+        });
     });
 
+    // POST Request.
     app.post('/listsy', urlEncodedParser, function(req, res)
     {
-        data.push(req.body);
-        res.json(data);
+        // Fetch the newly added item from the view and push it into MongoDB.
+
+        var newTodo = Model(req.body).save(function(err, data){ 
+            if(err) throw err;
+            res.json(data);
+        });
     });
 
+    // DELETE Request.
     app.delete('/listsy/:item', function(req, res)
     {
-        data = data.filter(function(todo){
-            return (todo.item.replace(/ /g, "-") != req.params.item)
-        });
-        res.json(data);
+        // Delete selected item from the view from MongoDB.
+
+        Model.find({item: req.params.item.replace(/\-/g, " ")}).remove(function(err, data){
+            if(err) throw err;
+            res.json(data);
+        });  
     });
 
 }
