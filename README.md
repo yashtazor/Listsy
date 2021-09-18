@@ -1,4 +1,4 @@
-# Listsy.
+# Listsy
 
 Listsy is a simple 'Node-Express' to-do list app.
 
