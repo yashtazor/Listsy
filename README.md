@@ -13,30 +13,29 @@ Listsy is a simple 'Node-Express' to-do list app.
 A simple MVC (Model-View-Control) architecture was used for making this app. More about this architecture can be found at
 https://www.geeksforgeeks.org/mvc-design-pattern/
 
-### 2. Prerequisites
-Listsy is quite basic but it is made up of a number of tools which need to be configured beforehand.
+### 2. Technology Stack and Dependancies
+The following technology stack was used to make Listsy
 
-#### Mains
+#### Backend
 
 * NodeJS
+* EJS (Templating Engine)
 * MongoDB
 
-#### External Modules
+#### Dependancies
 
 * Express
 * Mongoose
 
-#### Templating Engine
-
-* EJS
 
 ### 3. How to Run?
 Running this app is fairly simple. The following steps need to be followed.
 
-1. Open the project on any code editor.
-2. Replace the MongoDB URL and Schema Name with your details in the Control.js file in 'control' folder.
-3. Run the node server.
-4. Access it from the localhost at 3000 port and /listsy route.
+1. Clone the project and navigate to the project directory.
+2. Run **``npm install``** to install all the dependancies.
+3. Replace the MongoDB URL and Schema Name with your details in the Control.js file in 'control' folder.
+4. Run the node server.
+5. Access it from the localhost at 3000 port and /listsy route.
 
 This app can also be deployed on the web by using manual server coding or by using pre-configured services like Heroku, etc.
 
