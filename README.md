@@ -42,6 +42,4 @@ This app can also be deployed on the web by using manual server coding or by usi
 
 ![Logo](https://user-images.githubusercontent.com/42903859/85853476-2f211800-b7d0-11ea-9be3-87b015906559.png)
 
-<p align="center">
-<b>Listsy by Yash Dekate 2020.</b>
-<p>
+<b> <p align = "center"> Created by Yash Dekate. </p> </b>
